@@ -1,7 +1,8 @@
-var rounds = 70;
+var rounds = 130;
 var totalDigits = ((rounds * (rounds + 1)) / 2) * 8 + 1;
-if (totalDigits > 30000) {
-  totalDigits = 30000;
+console.log(totalDigits);
+if (totalDigits > 99999) {
+  totalDigits = 99999;
 }
 var coordinates = [];
 
