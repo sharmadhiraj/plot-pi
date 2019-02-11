@@ -1,4 +1,8 @@
-var totalDigits = 10000;
+var rounds = 70;
+var totalDigits = ((rounds * (rounds + 1)) / 2) * 8 + 1;
+if (totalDigits > 30000) {
+  totalDigits = 30000;
+}
 var coordinates = [];
 
 var x = 0,
@@ -29,5 +33,3 @@ while (coordinates.length < totalDigits) {
     dy = -1;
   }
 }
-
-// console.table(coordinates);

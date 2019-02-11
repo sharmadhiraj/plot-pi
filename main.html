@@ -7,6 +7,7 @@
     <script src="coordinate.js"></script>
     <script src="utils.js"></script>
     <script src="main.js"></script>
+    <script src="pi.js"></script>
 
     <script>
       var canvas = document.getElementById("canvas");
@@ -14,11 +15,15 @@
       var offsetY = canvas.height / 2;
       var ctx = canvas.getContext("2d");
 
-      coordinates.forEach(coordinate => {
-        ctx.fillStyle = "#000000";
-        console.log(coordinate);
+      for (var i = 0; i < coordinates.length; i++) {
+        coordinate = coordinates[i];
+        var nthDigitOfPi = getnthDigitOfPi(i);
+        console.log(nthDigitOfPi);
+        var color = getColorForIndex(nthDigitOfPi);
+        console.log(color);
+        ctx.fillStyle = color;
         ctx.fillRect(offsetX + coordinate.x, offsetY + coordinate.y, 1, 1);
-      });
+      }
     </script>
   </body>
 </html>
