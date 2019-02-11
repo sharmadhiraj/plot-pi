@@ -21,17 +21,18 @@ while (coordinates.length < totalDigits) {
   var coordinate = new Coordinate(round, x, y);
   coordinates.push(coordinate);
 
-  if (!isEndOfRound(round, coordinate)) {
-    if (isBottom(round, coordinate)) {
+  // dx = dy = 0;
+  if (!isEndOfRound(coordinate)) {
+    if (isBottom(coordinate)) {
       dx = 1;
       dy = 0;
-    } else if (isRight(round, coordinate)) {
+    } else if (isRight(coordinate)) {
       dx = 0;
       dy = 1;
-    } else if (isTop(round, coordinate)) {
+    } else if (isTop(coordinate)) {
       dx = -1;
       dy = 0;
-    } else if (isLeft(round, coordinate)) {
+    } else if (isLeft(coordinate)) {
       dx = 0;
       dy = -1;
     }
@@ -44,26 +45,35 @@ while (coordinates.length < totalDigits) {
 
 console.table(coordinates);
 
-function isEndOfRound(round, coordinate) {
+function isEndOfRound(coordinate) {
   return (
-    negativeCompare(round, coordinate.x) && negativeCompare(round, coordinate.y)
+    negativeCompare(coordinate.round, coordinate.x) &&
+    negativeCompare(coordinate.round, coordinate.y)
   );
 }
 
-function isBottom(round, coordinate) {
-  return negativeCompare(round, coordinate.y) && coordinate.x < round;
+function isBottom(coordinate) {
+  return (
+    negativeCompare(coordinate.round, coordinate.y) &&
+    coordinate.x < coordinate.round
+  );
 }
 
-function isRight(round, coordinate) {
-  return round == coordinate.x && coordinate.y < round;
+function isRight(coordinate) {
+  return coordinate.round == coordinate.x && coordinate.y < coordinate.round;
 }
 
-function isTop(round, coordinate) {
-  return round == coordinate.y && coordinate.x > round * -1;
+function isTop(coordinate) {
+  return (
+    coordinate.round == coordinate.y && coordinate.x > coordinate.round * -1
+  );
 }
 
-function isLeft(round, coordinate) {
-  return negativeCompare(round, coordinate.x) && coordinate.y > round * -1;
+function isLeft(coordinate) {
+  return (
+    negativeCompare(coordinate.round, coordinate.x) &&
+    coordinate.y > coordinate.round * -1
+  );
 }
 
 function negativeCompare(a, b) {
