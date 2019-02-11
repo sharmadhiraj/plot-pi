@@ -1,4 +1,4 @@
-var totalDigits = 100;
+var totalDigits = 10000;
 var coordinates = [];
 
 var x = 0,
@@ -30,4 +30,4 @@ while (coordinates.length < totalDigits) {
   }
 }
 
-console.table(coordinates);
+// console.table(coordinates);

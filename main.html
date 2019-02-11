@@ -1,3 +1,24 @@
-<script src="coordinate.js"></script>
-<script src="utils.js"></script>
-<script src="main.js"></script>
+<html>
+  <title>Plot PI</title>
+  <link href="styles.css" rel="stylesheet" />
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <script src="coordinate.js"></script>
+    <script src="utils.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+      var canvas = document.getElementById("canvas");
+      var offsetX = canvas.width / 2;
+      var offsetY = canvas.height / 2;
+      var ctx = canvas.getContext("2d");
+
+      coordinates.forEach(coordinate => {
+        ctx.fillStyle = "#000000";
+        console.log(coordinate);
+        ctx.fillRect(offsetX + coordinate.x, offsetY + coordinate.y, 1, 1);
+      });
+    </script>
+  </body>
+</html>
