@@ -21,19 +21,15 @@ while (coordinates.length < totalDigits) {
   var coordinate = new Coordinate(round, x, y);
   coordinates.push(coordinate);
 
-  // dx = dy = 0;
+  dx = dy = 0;
   if (!isEndOfRound(coordinate)) {
     if (isBottom(coordinate)) {
       dx = 1;
-      dy = 0;
     } else if (isRight(coordinate)) {
-      dx = 0;
       dy = 1;
     } else if (isTop(coordinate)) {
       dx = -1;
-      dy = 0;
     } else if (isLeft(coordinate)) {
-      dx = 0;
       dy = -1;
     }
   } else {
