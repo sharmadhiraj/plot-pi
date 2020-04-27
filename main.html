@@ -1,29 +1,29 @@
-<html>
-  <title>Plot PI</title>
-  <link href="styles.css" rel="stylesheet" />
-  <body>
-    <canvas id="canvas"></canvas>
+<html lang="en">
+<title>Plot PI</title>
+<link href="styles.css" rel="stylesheet"/>
+<body>
+<canvas id="canvas"></canvas>
 
-    <script src="coordinate.js"></script>
-    <script src="utils.js"></script>
-    <script src="main.js"></script>
-    <script src="pi.js"></script>
+<script src="coordinate.js"></script>
+<script src="utils.js"></script>
+<script src="main.js"></script>
+<script src="pi.js"></script>
 
-    <script>
-      var canvas = document.getElementById("canvas");
-      var offsetX = canvas.width / 2;
-      var offsetY = canvas.height / 2;
-      var ctx = canvas.getContext("2d");
+<script>
+    const canvas = document.getElementById("canvas");
+    const offsetX = canvas.width / 2;
+    const offsetY = canvas.height / 2;
+    const ctx = canvas.getContext("2d");
 
-      for (var i = 0; i < coordinates.length; i++) {
+    for (let i = 0; i < coordinates.length; i++) {
         coordinate = coordinates[i];
-        var nthDigitOfPi = getnthDigitOfPi(i);
+        const nthDigitOfPi = getDigitOfPiByIndex(i);
         console.log(nthDigitOfPi);
-        var color = getColorForIndex(nthDigitOfPi);
+        const color = getColorForIndex(nthDigitOfPi);
         console.log(color);
         ctx.fillStyle = color;
         ctx.fillRect(offsetX + coordinate.x, offsetY + coordinate.y, 1, 1);
-      }
-    </script>
-  </body>
+    }
+</script>
+</body>
 </html>
