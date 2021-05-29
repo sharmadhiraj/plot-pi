@@ -1,13 +1,13 @@
 <html lang="en">
 <title>Plot PI</title>
-<link href="styles.css" rel="stylesheet"/>
+<link href="assets/styles.css" rel="stylesheet"/>
 <body>
 <canvas id="canvas"></canvas>
 
-<script src="coordinate.js"></script>
-<script src="utils.js"></script>
-<script src="main.js"></script>
-<script src="pi.js"></script>
+<script src="js/coordinate.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/main.js"></script>
+<script src="js/pi.js"></script>
 
 <script>
     const canvas = document.getElementById("canvas");
@@ -16,7 +16,7 @@
     const ctx = canvas.getContext("2d");
 
     for (let i = 0; i < coordinates.length; i++) {
-        coordinate = coordinates[i];
+       const coordinate = coordinates[i];
         const nthDigitOfPi = getDigitOfPiByIndex(i);
         console.log(nthDigitOfPi);
         const color = getColorForIndex(nthDigitOfPi);
