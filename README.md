@@ -1,12 +1,20 @@
-# plot-pi
+# Plot π (Pi)
 
-Graphical Representation of PI
+### 🎨 Visualizing the Digits of π (Pi)
 
-- Find coordinates of spiral grid.
-- Get digit of pi with an index of coordinate in spiral.
-- Plot a color to coordinate according to digit value (0-9).
-  <br/>
+A simple project to generate a graphical representation of π using a spiral grid.
 
-#### Output
+---
+
+### 📌 How It Works
+
+- Computes spiral grid coordinates.
+- Maps each digit of π to a corresponding spiral position.
+- Assigns a color to each coordinate based on the digit (0–9).
+- Plots the result as an image.
+
+---
+
+### 🖼️ Output
 
 ![Output](output.JPG)
